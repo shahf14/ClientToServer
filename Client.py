@@ -8,11 +8,11 @@ import socket
 import random
 import logging
 
-logging.basicConfig(filename = 'Client_Record.log',level=logging.INFO,format = '%(asctime)s:%(funcName)s')
+logging.basicConfig(filename = 'Client_Record.log',level=logging.INFO, format = '%(asctime)s:%(levelname)s:%(message)s')
 msg = str(random.randint(1,100))
 logging.info("Message created successfully")
 with socket.socket(socket.SOCK_DGRAM) as s:
-    logging.info("Message created successfully")
+   #logging.info("Message created successfully")
     s.connect(('127.0.0.1', 65432))
     s.sendall(msg.encode('utf-8'))
     logging.info("Message Coded and sent")
